@@ -205,17 +205,20 @@ export default function Home() {
       >
         {/* Animated Background */}
         <motion.div
-          className="absolute inset-0 z-0"
+          className="absolute inset-0 z-0 overflow-hidden"
           initial={{ scale: 1.1, filter: "brightness(0.5)" }}
           animate={{ scale: 1, filter: "brightness(1)" }}
           transition={{ duration: 2, ease: "easeOut" }}
-          style={{
-            backgroundImage: "url(/bg.jpg)",
-            backgroundSize: "cover",
-            backgroundPosition: "85% center",
-            backgroundRepeat: "no-repeat",
-          }}
-        />
+        >
+          <Image
+            src="/bg.jpg"
+            alt="Hero Background"
+            fill
+            quality={80}
+            priority
+            className="object-cover object-[85%_center]"
+          />
+        </motion.div>
 
 
         {/* Shadow overlay for smaller screens and iPad */}
@@ -255,41 +258,30 @@ export default function Home() {
       <style
         dangerouslySetInnerHTML={{
           __html: `
-        /* Default: phone screens - center the background and cover */
-        #challenges {
-          background-image: url(/vecna_vs_steve.png);
-          background-position: center left 20%;
-          background-repeat: no-repeat;
-          background-attachment: scroll;
-          background-size: cover;
-        }
-
-        /* Tablets up to iPad Pro (~768px to 1023px): match previous phone layout (shifted left 48%) */
-        @media (min-width: 768px) and (max-width: 1023px) {
-          #challenges {
-            background-position: left 48%;
-          }
-        }
-
-        /* Desktop: restore original desktop layout */
-        @media (min-width: 1024px) {
-          #challenges {
-            background-size: 90%;
-            background-position: left 30%;
-          }
-        }
+        /* We now handle challenges bg position via tailwind classes on the image */
       `,
         }}
       />
       <section
         id="challenges"
-        className="relative min-h-screen py-1 sm:py-1 md:py-20 px-4 sm:px-6 md:px-8 mt-1 md:mt-24"
+        className="relative min-h-screen py-1 sm:py-1 md:py-20 px-4 sm:px-6 md:px-8 mt-1 md:mt-24 overflow-hidden"
       >
+        {/* Background Image managed by Next Image for performance */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <Image
+            src="/vecna_vs_steve.png"
+            alt="Challenges background"
+            fill
+            quality={75}
+            className="object-cover md:object-[left_48%] lg:object-[left_30%] lg:!scale-90 lg:origin-left"
+          />
+        </div>
+
         {/* Shadow overlay for smaller screens and iPad */}
         <div className="absolute inset-0 bg-black/50 lg:hidden pointer-events-none z-5" />
 
         {/* Black gradient overlay on background image */}
-        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-black via-black/60 to-transparent pointer-events-none z-5" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/60 to-transparent pointer-events-none z-5" />
 
         {/* Black gradient transition at top - larger for smaller screens */}
         <div className="absolute top-0 left-0 right-0 h-16 md:h-32 bg-gradient-to-b from-black via-black/90 to-transparent pointer-events-none z-10" />
@@ -433,26 +425,24 @@ export default function Home() {
       {/* Awards Section */}
       <style dangerouslySetInnerHTML={{
         __html: `
-        /* Phones & tablets (smaller than laptop) - increase crew.png by 40% (70% * 1.4 = 98%) */
-        #awards {
-          background-image: url(/crew.png);
-          background-position: center bottom;
-          background-repeat: no-repeat;
-          background-attachment: scroll;
-          background-size: 98%;
-        }
-
-        /* Laptop and larger - keep original 70% size */
-        @media (min-width: 1024px) {
-          #awards {
-            background-size: 70%;
-          }
-        }
+        /* Managed by Next Image */
       `}} />
       <section
         id="awards"
-        className="relative min-h-screen flex items-center justify-center px-4 mt-1 md:mt-0 fade-in"
+        className="relative min-h-screen flex items-center justify-center px-4 mt-1 md:mt-0 fade-in overflow-hidden"
       >
+        <div className="absolute inset-0 z-0 pointer-events-none flex items-end justify-center">
+          <div className="relative w-full h-full lg:w-[70%] lg:h-[70%] lg:bottom-0">
+            <Image
+              src="/crew.png"
+              alt="Awards background"
+              fill
+              quality={80}
+              className="object-contain object-bottom scale-[0.98] lg:scale-100"
+            />
+          </div>
+        </div>
+
         {/* Content */}
         <div
           className="relative z-20 text-center max-w-4xl py-100 slide-up"
