@@ -516,9 +516,6 @@ export default function Home() {
                 className="group/btn relative inline-flex items-center justify-center h-11 md:h-12 px-8 rounded-md bg-gradient-to-br from-[#c12d28] to-[#a02520] font-bold text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] transition-all hover:bg-[#a02520] hover:scale-[1.01] active:scale-[0.99] text-sm md:text-base overflow-hidden"
               >
                 <span className="relative z-10 flex items-center gap-2">
-                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 0C5.372 0 0 5.373 0 12s5.372 12 12 12 12-5.373 12-12S18.628 0 12 0zm-1.093 17.584V6.416l6.818 5.584-6.818 5.584z" />
-                  </svg>
                   REGISTER
                 </span>
                 <BottomGradient />
