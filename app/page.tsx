@@ -312,7 +312,7 @@ export default function Home() {
                     To Be Revealed...
                   </h2>
                   <p className="text-base sm:text-lg text-gray-300 font-light leading-relaxed mb-8">
-                    The official problem statements for Code Rift are currently locked. They will be revealed exclusively to participants on the day of the event. Prepare yourself for challenges that will push your creativity and coding skills to their limits.
+                    The official problem statements for Code Rift are currently locked. They will be revealed exclusively to participants 12-03-26, 9:00PM. Prepare yourself for challenges that will push your creativity and coding skills to your maximum limits.
                   </p>
 
                   <div className="flex flex-col sm:flex-row justify-end gap-4 mt-6">
