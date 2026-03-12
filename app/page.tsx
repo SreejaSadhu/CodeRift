@@ -328,6 +328,19 @@ export default function Home() {
                       Join WhatsApp Group
                     </a>
                   </div>
+                  <div className="flex flex-col sm:flex-row justify-end gap-4 mt-6">
+                    <a
+                      href="https://drive.google.com/drive/folders/1paNP54Ikz_w02jqABDwS9pdILaeCIoHb?usp=sharing"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group relative inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-medium transition-all duration-300 border border-white/20 overflow-hidden"
+                    >
+                      <svg className="w-5 h-5 text-gray-300 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                      </svg>
+                      View Problem Statements
+                    </a>
+                  </div>
                 </div>
 
               </div>
